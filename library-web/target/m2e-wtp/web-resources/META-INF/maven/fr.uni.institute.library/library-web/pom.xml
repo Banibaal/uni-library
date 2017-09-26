@@ -12,9 +12,7 @@
   <name>library-web Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
-  <properties>
-  	<library.version>1.0.1-snapshot</library.version>
-  </properties>
+ 
   
   <build>
     <finalName>library-web</finalName>
