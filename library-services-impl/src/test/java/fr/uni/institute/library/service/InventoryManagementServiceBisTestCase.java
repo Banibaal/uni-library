@@ -22,7 +22,7 @@ import fr.uni.institute.library.dao.jdbc.CategoryDaoJdbc;
 import fr.uni.institute.library.service.impl.InventoryManagementServiceImpl;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class InventoryManagementServiceTestCaseBis {
+public class InventoryManagementServiceBisTestCase {
 
 	private static InventoryManagementService service;
 	private static int nombreCategories;
