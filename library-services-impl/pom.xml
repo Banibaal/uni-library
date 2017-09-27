@@ -17,7 +17,7 @@
   	<dependency>
   		<groupId>fr.uni.institute.library</groupId>
   		<artifactId>library-services-api</artifactId>
-  		<version>1.0.1-SNAPSHOT</version>
+  		<version>${library.version}</version>
   	</dependency>
   </dependencies>
 </project>
