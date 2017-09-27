@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Collection;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -24,16 +25,22 @@ public class InventoryManagementServiceTestCase {
 	private static InventoryManagementService service;
 	private static int nombreCategories;
 	private static Category categorieAttendue; 
+	private static Logger logger = Logger.getLogger(InventoryManagementServiceTestCase.class) ;
 	
 	@BeforeClass
 	public static void setUpClass() throws Exception {
-		System.out.println("-- Initialisation setUpClass de jeu de tests");
-		System.out.println("Initialisation de jeu de tests");
+		logger.debug("--------------------------------------------------------");
+		logger.debug("Initialisation setUpClass de jeu de tests");
+		logger.info("Initialisation de jeu de tests");
+		logger.debug("Chargement de Driver");
 		Class.forName("com.mysql.jdbc.Driver");
+		logger.debug("Creationn d'une connexion");
 		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/uni_library_db?autoReconnect=true", "root", "admin");
+		logger.debug("Creationn du service");
 		service = new InventoryManagementServiceImpl();		
 		service.setCategoryDao(new CategoryDaoJdbc(connection));
 		nombreCategories = 9;
+		logger.debug("--------------------------------------------------------");
 		//
 		categorieAttendue = new Category(1, "Music");
 	}
